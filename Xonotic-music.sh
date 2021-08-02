@@ -18,6 +18,13 @@ then
     echo "Xonotic dlcache found at \"$DLCACHE\"."
     echo "Directory contains `ls | wc -l` files (${#FILES[@]} of them match pattern \"$PATTERN\")."
     echo "Music files will be copied into \"$DESTINATION\"."
+    mkdir -p $DESTINATION # Recursively creating destination folder
+    INDEX=0
+    for FILE in "${FILES[@]}"
+    do
+        INDEX=$((INDEX + 1))
+        echo "$INDEX / ${#FILES[@]} :: $FILE"
+    done
 else
     echo "Xonotic dlcache was not found: \"$DLCACHE\" (doesn't exist or isn't a directory)"
 fi
