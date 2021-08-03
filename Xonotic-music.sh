@@ -37,7 +37,7 @@ then
     AFTER=`ls $DESTINATION | wc -l` # Number of files after unzipping
     echo "Unzipping complete. $(($AFTER - $BEFORE)) files out of ${#FILES[@]} archives were unzipped successfully. Folder now contains $AFTER files."
     cd $DESTINATION
-    find . ! -name "*.ogg" ! -name "." ! -name ".." -exec rm -rf {} \; 2>&- # Supressing errors while removing unnecessary files
+    find . ! -iname "*.ogg" ! -name "." ! -name ".." -exec rm -rf {} \; 2>&- # Supressing errors while removing unnecessary files
     NOW=`ls $DESTINATION | wc -l` # Number of files right now
     echo "Cleaning complete. Removed $(($AFTER - $NOW)) unnecessary files (out of $AFTER files). Folder now contains $NOW files."
 else

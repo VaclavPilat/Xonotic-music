@@ -2,7 +2,7 @@
 A simple Bash script that extracts music files from Xonotic's data cache.
 
 ## How it works
-Xonotic's data cache has a lot of .ZIP files. Some of them contain .OGG music files. This program finds all archives that match selected pattern and inclusively extracts sound files from them into a selected destination folder (that will be created if it doesn't exist).
+Xonotic's data cache has a lot of .ZIP files. Some of them contain .OGG music files. This program finds all archives that match selected pattern and files from them into a selected destination folder (that will be created if it doesn't exist). Then it removes all files that don't have (case insensitive) .OGG extension.
 
 ## How to run
 Make sure you have installed `unzip` package. 
